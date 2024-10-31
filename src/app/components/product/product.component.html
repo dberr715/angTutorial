@@ -11,4 +11,21 @@
     iconCancelClass="hidden"
   >
   </p-rating>
+
+  <div class="row">
+    <button
+      types="button"
+      pButton
+      icon="pi pi-pencil"
+      (click)="editProduct()"
+      label="Edit"
+    ></button>
+    <button
+      types="button"
+      pButton
+      icon="pi pi-trash"
+      (click)="deleteProduct()"
+      label="Delete"
+    ></button>
+  </div>
 </div>
