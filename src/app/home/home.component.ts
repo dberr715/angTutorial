@@ -36,16 +36,46 @@ export class HomeComponent {
       });
   }
 
-  editProduct(product: Product) {
-    console.log(product, 'Edit');
+  editProduct(product: Product, id: number) {
+    this.productService
+      .editProduct(`http://localhost:3000/clothes/${id}`, product)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.fetchProducts(0, this.rows);
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
   }
 
-  deleteProduct(product: Product) {
-    console.log(product, 'Delete');
+  deleteProduct(product: Product, id: number) {
+    this.productService
+      .deleteProduct(`http://localhost:3000/clothes/${id}`)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.fetchProducts(0, this.rows);
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
   }
 
   addProduct(product: Product) {
-    console.log(product, 'Add');
+    this.productService
+      .addProduct(`http://localhost:3000/clothes`, product)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.fetchProducts(0, this.rows);
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
   }
 
   ngOnInit() {
