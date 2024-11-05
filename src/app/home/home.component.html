@@ -4,7 +4,7 @@
     pButton
     icon="pi pi-plus"
     (click)="toggleAddPopup()"
-    labal="Add Product"
+    label="Add Product"
   ></button>
 
   <div class="row wrap gap-1 space-between">
@@ -26,13 +26,13 @@
 
 <app-edit-popup
   [product]="selectedProduct"
-  [display]="displayEditPopup"
+  [(display)]="displayEditPopup"
   (confirm)="onConfirmEdit($event)"
   header="Edit Product"
 ></app-edit-popup>
 
 <app-edit-popup
-  [display]="displayAddPopup"
+  [(display)]="displayAddPopup"
   (confirm)="onConfirmAdd($event)"
   header="Add Product"
 ></app-edit-popup>
